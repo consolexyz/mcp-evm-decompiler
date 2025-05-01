@@ -8,9 +8,8 @@ A Model Context Protocol (MCP) server that uses Heimdall for smart contract anal
 - Storage analysis
 
 
-```
 
-###  Manual Installation
+###  Installation
 
 1. Install Rust:
 ```bash
@@ -40,8 +39,6 @@ npm run build
 ```
 
 
-```
-
 ## Claude / VS Code Integration
 
 
@@ -63,6 +60,7 @@ Replace `/path/to/repo` with the actual path to where you've cloned this reposit
 // Get decompiled source
 decompileContract({ address: "0x...", includeSource: true })
 
+```
 
 ## Development
 
