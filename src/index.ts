@@ -102,8 +102,8 @@ This could be due to:
 - Decompilation timeout
 - Invalid or unusual bytecode
 
-You can check if this contract has verified source code on Etherscan:
-https://etherscan.io/address/${address}#code`
+You can check if this contract has verified source code on Monad Explorer:
+https://testnet.monadexplorer.com/address/${address}#code`
                     }],
                     isError: true
                 };
