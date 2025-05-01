@@ -1,4 +1,4 @@
-# Heimdall MCP Server
+# ABOUT THIS  MCP Server
 
 A Model Context Protocol (MCP) server that uses Heimdall for smart contract analysis and decompilation.
 
@@ -6,23 +6,11 @@ A Model Context Protocol (MCP) server that uses Heimdall for smart contract anal
 
 - Smart contract decompilation
 - Storage analysis
-- Control flow graph generation
-- Abstract syntax tree analysis
-- Contract statistics
 
-## Installation
-
-### Option 1: Using Docker (Recommended)
 
 ```
-# Build the Docker image
-docker build -t heimdall-mcp .
 
-# Run the container
-docker run -p 3000:3000 heimdall-mcp
-```
-
-### Option 2: Manual Installation
+###  Manual Installation
 
 1. Install Rust:
 ```bash
@@ -35,53 +23,46 @@ curl -L http://get.heimdall.rs | bash
 bifrost
 ```
 
-3. Install Node.js dependencies:
+3. Clone the repository:
+```bash
+git clone https://github.com/consolexyz/mcp-evm-decompiler.git
+cd mcp-evm-decompiler
+```
+
+4. Install Node.js dependencies:
 ```bash
 npm install
 ```
 
-4. Build the project:
+5. Build the project:
 ```bash
 npm run build
 ```
 
-5. Start the server:
-```bash
-npm start
+
 ```
 
-## Usage
+## Claude / VS Code Integration
 
-The MCP server provides several tools for contract analysis:
 
-### 1. Explain Contract
-```typescript
-// Basic analysis
-explainContract({ address: "0x..." })
-
-// Detailed analysis
-explainContract({ address: "0x...", analysisType: "detailed" })
-
-// Security analysis
-explainContract({ address: "0x...", analysisType: "security" })
+```json
+"evm-decompiler": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+        "/path/to/repo/dist/index.js"
+    ]
+}
 ```
+
+Replace `/path/to/repo` with the actual path to where you've cloned this repository. This configuration allows Claude to communicate with the analyzer MCP server, 
+
 
 ### 2. Decompile and Analyze
 ```typescript
 // Get decompiled source
-decompileAndAnalyze({ address: "0x...", includeSource: true })
+decompileContract({ address: "0x...", includeSource: true })
 
-// Get AST analysis
-decompileAndAnalyze({ address: "0x...", format: "ast" })
-
-// Get control flow graph
-decompileAndAnalyze({ address: "0x...", format: "cfg" })
-```
-
-### 3. Get Contract Statistics
-```typescript
-getContractStats({ address: "0x..." })
-```
 
 ## Development
 
@@ -103,4 +84,4 @@ npm test
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
