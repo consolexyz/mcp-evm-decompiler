@@ -10,7 +10,7 @@ import * as path from 'path';
 // Load environment variables
 dotenv.config();
 
-// Initialize Heimdall API with Ethereum Mainnet RPC
+// Initialize Heimdall API with Monad Testnet RPC
 const RPC_ENDPOINT = "https://testnet-rpc.monad.xyz";
 logger.info(`Initializing HeimdallAPI Monad testnet endpoint: ${RPC_ENDPOINT}`);
 const heimdall = new HeimdallAPI(RPC_ENDPOINT);
